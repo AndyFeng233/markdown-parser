@@ -11,19 +11,19 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
+
        
 
-        for(int i = 0; i < markdown.length(); i++) {
+        for(int i = 0; i < markdown.lines().count(); i++) {
        // while(currentIndex < markdown.length()) {
-         
             if(markdown.indexOf("[") == -1 || markdown.indexOf("]") == -1 || markdown.indexOf("(") == -1 || markdown.indexOf(")") == -1 ||markdown.indexOf("!") != -1) {
                 return toReturn;
             } 
 
 
-        //    else if(markdown.indexOf("!") != -1) {
-          //      return toReturn;
-           // }
+           else if(markdown.indexOf("!") != -1) {
+                return toReturn;
+            }
 
 
             else {
